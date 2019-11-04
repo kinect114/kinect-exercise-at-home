@@ -1,0 +1,159 @@
+﻿<Window x:Class="wpf_move.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_move"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800.133" Width="1372.309" Foreground="{x:Null}" Background="White">
+    <Grid Margin="-21,0,2,-21">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="102*"/>
+            <ColumnDefinition Width="484*"/>
+            <ColumnDefinition Width="322*"/>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="444*"/>
+            <ColumnDefinition Width="246*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="videoImage" Margin="10,10,135,420" Grid.ColumnSpan="3" OpacityMask="#FFD12626"/>
+        <Button x:Name="ANGLE_DOWN" Content="角度向下" HorizontalAlignment="Left" Margin="48,546,0,0" VerticalAlignment="Top" Width="106" Height="36" FontSize="18" Click="ANGLE_DOWN_click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="successtime"   HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="116,414,0,0" RenderTransformOrigin="6.533,-4.109" Width="40" Height="58" Grid.Column="1" FontSize="36" BorderBrush="{x:Null}"/>
+
+        <Label Content="成功次數:" HorizontalAlignment="Left" Margin="62,420,0,0" VerticalAlignment="Top" Width="126" FontSize="24" Height="62" BorderBrush="Black" Grid.ColumnSpan="2"/>
+        <Image Source="C:\page1.png" HorizontalAlignment="Left" Height="315" VerticalAlignment="Top" Width="229" Grid.Column="4" Margin="101,442,0,0" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.007"/>
+                    <RotateTransform Angle="0.204"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Ellipse x:Name="hn_point1" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="21" Margin="129,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="hn_point2" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="21" Margin="176,659,0,0" Stroke="Black" VerticalAlignment="Top" Width="21" RenderTransformOrigin="1.267,0.917"/>
+        <Ellipse x:Name="hn_point3" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="263,541,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="0.2,6.533"/>
+        <Ellipse x:Name="hn_point4" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="233,656,0,0" Stroke="Black" VerticalAlignment="Top" Width="21" RenderTransformOrigin="2.704,-1.308"/>
+        <!--hn 1左肘 2左膝  3右肘 4右膝-->
+        <Ellipse x:Name="hc_point1" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="114,599,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="hc_point2" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="282,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="hc_point3" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="150,495,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="hc_point4" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="21" Margin="243,494,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="hc_point5" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="21" Margin="200,521,0,0" Stroke="Black" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-0.6,2.767"/>
+        <!--hc 1左手 2右手 3左肩 4右肩 5胸-->
+        <Ellipse x:Name="sq_point1" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="114,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="sq_point2" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="21" Margin="283,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="sq_point3" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="170,733,0,0" Stroke="Black" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.6,2.767"/>
+        <Ellipse x:Name="sq_point4" Grid.Column="4" Fill="Red" HorizontalAlignment="Left" Height="22" Margin="234,733,0,0" Stroke="Black" VerticalAlignment="Top" Width="21" RenderTransformOrigin="-0.6,2.767"/>
+
+        <!--sq 1左手 2右手 3 左腳 4右腳 5 hip-->
+
+        <Button x:Name="ANGLE_UP" Content="角度向上" HorizontalAlignment="Left" Margin="82,546,0,0" VerticalAlignment="Top" Width="116" Height="36" FontSize="18" Click="ANGLE_UP_click" RenderTransformOrigin="0.906,-1.067" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="57,10,0,0" TextWrapping="Wrap" Text="運動計數器" VerticalAlignment="Top" Width="164" Grid.Column="4" FontSize="36"/>
+        <Ellipse x:Name="sensoropen" Grid.Column="1" Fill="Red" HorizontalAlignment="Left" Height="58" Margin="115,646,0,0" Stroke="Black" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0,0">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-2.862"/>
+                    <RotateTransform Angle="1.543"/>
+                    <TranslateTransform Y="-0.95"/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <TextBox HorizontalAlignment="Left" Height="78" Margin="48,632,0,0" TextWrapping="Wrap" Text="sensor open :" VerticalAlignment="Top" Width="104" FontSize="22" RenderTransformOrigin="0.769,-1" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Column="5" HorizontalAlignment="Left" Height="657" Margin="66,21,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.051"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Button Content="手&#xD;&#xA;碰膝" x:Name="botton1"  HorizontalAlignment="Left" VerticalAlignment="Top"  Width="80" Height="230" RenderTransformOrigin="0.75,0.065" Click="changetohn" FontSize="20" BorderBrush="#FF9C1063" Margin="-2,0,0,0" FontStretch="ExtraCondensed"/>
+            <Button Content="交叉碰趾&#xD;&#xA;" x:Name="botton2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.632,0.5" Height="230" FontSize="20" Click="changetohc" BorderBrush="#FF143C57">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.008"/>
+                        <RotateTransform Angle="0.088"/>
+                        <TranslateTransform Y="0.021"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="深蹲" x:Name="botton3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Height="230" FontSize="20"  BorderBrush="#FF0C3F63" Click="changetosq" Margin="0,0,-3,0" RenderTransformOrigin="0.694,0.587"/>
+        </StackPanel>
+        <MediaElement LoadedBehavior="Manual" Source="C:/toe crossover.mp4"  x:Name="midiahc" HorizontalAlignment="Left" Height="291" Margin="31,63,0,0" VerticalAlignment="Top" Width="410" Stretch="Fill" Grid.Column="3" Grid.ColumnSpan="2">
+            <MediaElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.303"/>
+                    <RotateTransform Angle="0.334"/>
+                    <TranslateTransform X="-0.008" Y="1.43"/>
+                </TransformGroup>
+            </MediaElement.RenderTransform>
+        </MediaElement>
+        <MediaElement x:Name="midiahn"  LoadedBehavior="Manual"  Source="C:\handtoknee.mp4" HorizontalAlignment="Left" Height="334" Margin="186,67,0,0" VerticalAlignment="Top" Width="500" RenderTransformOrigin="0.48,0.683" Stretch="Fill" Grid.Column="2" Grid.ColumnSpan="3" >
+            <MediaElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.128"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </MediaElement.RenderTransform>
+        </MediaElement>
+        <MediaElement  x:Name="midiasq"  LoadedBehavior="Manual"  Source="C:\squat.mp4" HorizontalAlignment="Left" Height="341" VerticalAlignment="Top" Width="504" Margin="185,65,0,0" Stretch="Fill" Grid.ColumnSpan="3" Grid.Column="2"/>
+        <Label  Background="White" HorizontalAlignment="Left" Margin="185,386,0,0" VerticalAlignment="Top" Width="522" Height="34" Grid.Column="2" Grid.ColumnSpan="3"/>
+        <Button x:Name="botton7" Content="簡單" Grid.Column="2" Margin="110,535,0,0" VerticalAlignment="Top" Height="50" FontSize="20" Click="change_to_level1" HorizontalAlignment="Left" Width="109"/>
+        <Button x:Name="botton8" Content="中等" Grid.Column="2" Margin="219,536,74,0" VerticalAlignment="Top" Height="50" FontSize="20" Click="change_to_level2" Grid.ColumnSpan="2"/>
+        <Button x:Name="botton9" Content="困難" Grid.Column="3" HorizontalAlignment="Left" Margin="82,535,0,0" VerticalAlignment="Top" Width="96" Height="50" FontSize="20" Click="change_to_level3" Grid.ColumnSpan="2"/>
+        <Label Content="難易度 :" Grid.Column="1" Margin="336,537,168,0" VerticalAlignment="Top" Height="54" FontSize="24" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.505"/>
+                    <RotateTransform Angle="0.217"/>
+                    <TranslateTransform X="0.003" Y="0.502"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="次數:" Grid.Column="2" HorizontalAlignment="Left" Margin="36,650,0,0" VerticalAlignment="Top" Width="115" Height="56" FontSize="24"/>
+        <TextBox x:Name="how_many_times" Grid.Column="2" Height="41" Margin="110,650,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="0.558,1.129" FontSize="36" HorizontalAlignment="Left" Width="96"/>
+        <Button x:Name="botton4" Content="確定" Grid.Column="2" HorizontalAlignment="Left" Margin="231,650,0,0" VerticalAlignment="Top" Width="101" Height="41" Click="do_how_many_time" FontSize="20" RenderTransformOrigin="0.09,0.427" Grid.ColumnSpan="2">
+        </Button>
+        <Label Content="進行時間:" HorizontalAlignment="Left" Margin="76,480,0,0" VerticalAlignment="Top" Height="70" Width="122" FontSize="24" RenderTransformOrigin="0.339,0.492" Grid.ColumnSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.253"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="hour" Grid.Column="1" HorizontalAlignment="Left" Margin="124,482,0,0" VerticalAlignment="Top" Height="56" Width="28" FontSize="24" RenderTransformOrigin="6.745,1.13" Content="0"/>
+        <Label Content="小時     分        秒&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="146,482,0,0" VerticalAlignment="Top" Height="60" Width="256" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label x:Name="minute"  Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="206,480,0,0" VerticalAlignment="Top" Height="52" Width="48" RenderTransformOrigin="0.767,1.429" FontSize="24">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.648"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="second" Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="260,480,0,0" VerticalAlignment="Top" Height="43" Width="35" RenderTransformOrigin="0,0" FontSize="24">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.749"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+    </Grid>
+</Window>
